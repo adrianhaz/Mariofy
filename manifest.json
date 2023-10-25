@@ -1,7 +1,7 @@
 {
-  "name": "Cenafy",
-  "version": "1.2.0",
-  "description": "And his name is John Cena",
+  "name": "Mariofy",
+  "version": "0.1.0",
+  "description": "Make Centroña Greate Again",
 
   "content_scripts": [
     {
@@ -12,7 +12,7 @@
 
   "web_accessible_resources": [
     {
-      "resources": ["cena.mp4"],
+      "resources": ["mario.mp4"],
       "matches": ["http://*/*", "https://*/*"]
     }
   ],

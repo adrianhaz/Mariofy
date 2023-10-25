@@ -2,14 +2,14 @@ const DELAY_IN_MS = 3000;
 const VIDEO_LENGTH_IN_MS = 20000;
 const MAX_Z_INDEX = 2147483647;
 
-const SHOULD_CENAFY = Math.floor(Math.random() * 100) === 69;
+const SHOULD_MARIOFY = Math.floor(Math.random() * 30) === 20;
 
 let hasLearnedWhoTheChampIs = false;
 let timeoutId;
 
-function getCenafyVideo() {
+function getMariofyVideo() {
   const video = document.createElement("video");
-  video.src = chrome.runtime.getURL("cena.mp4");
+  video.src = chrome.runtime.getURL("mario.mp4");
   Object.assign(video.style, {
     position: "fixed",
     background: "black",
@@ -22,7 +22,7 @@ function getCenafyVideo() {
   return video;
 }
 
-function cenafy() {
+function mariofy() {
   if (hasLearnedWhoTheChampIs) {
     return;
   }
@@ -47,14 +47,14 @@ function cenafy() {
     const previousBackgroundColor = body.style.backgroundColor;
     body.style.backgroundColor = "black";
 
-    const video = getCenafyVideo();
+    const video = getMariofyVideo();
     body.appendChild(video);
 
     // Prevent future clicks from spawning additional videos while
     // this is playing. In theory, pointer-events: none should guard
     // against this but child nodes could have pointer-events set
     // explicitly
-    window.removeEventListener("mouseup", cenafy);
+    window.removeEventListener("mouseup", mariofy);
 
     video.addEventListener("ended", () => {
       body.style.backgroundColor = previousBackgroundColor;
@@ -67,8 +67,8 @@ function cenafy() {
   }, DELAY_IN_MS);
 }
 
-if (SHOULD_CENAFY) {
+if (SHOULD_MARIOFY) {
   // Add this to mouse-up instead of on load so we can auto-play
   // the video with sound
-  window.addEventListener("mouseup", cenafy);
+  window.addEventListener("mouseup", mariofy);
 }
