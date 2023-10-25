@@ -1,4 +1,4 @@
-const DELAY_IN_MS = 3000;
+const DELAY_IN_MS = 1500;
 const VIDEO_LENGTH_IN_MS = 20000;
 const MAX_Z_INDEX = 2147483647;
 
