@@ -1,7 +1,7 @@
 {
   "name": "Mariofy",
-  "version": "0.1.0",
-  "description": "Make Centroña Greate Again",
+  "version": "1.0.0",
+  "description": "Make Centroña Great Again",
 
   "content_scripts": [
     {
